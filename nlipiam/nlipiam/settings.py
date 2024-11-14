@@ -40,9 +40,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'oauth2_provider',
+    'corsheaders',
 ]
 
+# Added Middleware:
+#  LogHeadersMiddleWare - very useful for debugging, logs all request response headers
+#  CorsMiddleware - required to allow Swagger to authenticate
+
 MIDDLEWARE = [
+    # 'nlipiam.middleware.LogHeadersMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -84,6 +91,11 @@ DATABASES = {
     }
 }
 
+# CORS configuration required to allow the Swagger server at 127.0.0.1:8006
+# to accept the redirect to http://127.0.0.1:8006/docs/oauth2-redirect
+
+CORS_ORIGIN_ALLOW_ALL = True
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'unsafe-none'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -147,6 +159,7 @@ OAUTH2_PROVIDER = {
         },
     "OIDC_ENABLED": True,
     "OIDC_RSA_PRIVATE_KEY": OIDC_RSA_PRIVATE_KEY,
+    "OAUTH2_VALIDATOR_CLASS" : 'nlipiam.validator.CustomOAuth2Validator'
 }
 
 # allow bypass of access rights prompt
