@@ -1,5 +1,7 @@
-# TOM: 2024-11-11
-# https://www.google.com/search?q=django+log+request+headeres&sca_esv=93dba3a330e5cf9e&sxsrf=ADLYWII-3TntQ1EYVlAN8wpEI2RLd1mTCQ%3A1731372257812&source=hp&ei=4aQyZ8G7L_T9kPIPyL-sgAc&iflsig=AL9hbdgAAAAAZzKy8XdkkFDcZXxLhowPi00Zyn3hUPTv&ved=0ahUKEwiBsJijyNWJAxX0PkQIHcgfC3AQ4dUDCBk&uact=5&oq=django+log+request+headeres&gs_lp=Egdnd3Mtd2l6IhtkamFuZ28gbG9nIHJlcXVlc3QgaGVhZGVyZXMyBxAAGIAEGA0yCBAAGIAEGKIEMggQABiABBiiBEjCHlAAWLAdcAB4AJABAJgBgAGgAeYPqgEEMjYuMbgBA8gBAPgBAZgCG6AC4hDCAgQQIxgnwgILEAAYgAQYkQIYigXCAg4QLhiABBixAxiDARiKBcICCxAuGIAEGLEDGIMBwgIOEC4YgAQYsQMY0QMYxwHCAgUQABiABMICChAAGIAEGEMYigXCAgsQABiABBixAxiDAcICDRAAGIAEGLEDGEMYigXCAgoQIxiABBgnGIoFwgIFEC4YgATCAgoQABiABBgUGIcCwgIGEAAYFhgemAMAkgcEMjYuMaAHvMIB&sclient=gws-wiz
+# A simple middleware to log requests.
+# 
+# https://docs.djangoproject.com/en/3.0/topics/http/middleware/#writing-your-own-middleware
+# https://docs.djangoproject.com/en/5.1/howto/logging/
 
 
 import logging
